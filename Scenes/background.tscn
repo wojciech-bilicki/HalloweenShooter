@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://j64drckijemr"]
+
+[ext_resource type="Texture2D" uid="uid://bloxp2shvndpx" path="res://Assets/Backgrounds/Skybox Castle outside.png" id="1_g4u7r"]
+
+[node name="Background" type="TextureRect"]
+modulate = Color(1, 0.113725, 1, 0.666667)
+custom_minimum_size = Vector2(600, 2.08165e-12)
+offset_left = -2.0
+offset_top = 1.00001
+offset_right = 598.0
+offset_bottom = 241.0
+scale = Vector2(2.75, 2.75)
+texture = ExtResource("1_g4u7r")
+stretch_mode = 1

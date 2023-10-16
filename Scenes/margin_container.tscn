@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://xwhuy31kw76u"]
+
+[ext_resource type="FontFile" uid="uid://d370phyelf2v8" path="res://Assets/font/font.otf" id="1_u0fih"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+modulate = Color(1, 0.235294, 0.368627, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_u0fih")
+theme_override_font_sizes/font_size = 60
+text = "Halloween Shooter"

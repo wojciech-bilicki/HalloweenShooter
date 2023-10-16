@@ -1,0 +1,149 @@
+[gd_scene load_steps=17 format=3 uid="uid://p0jk2b30vuf4"]
+
+[ext_resource type="Texture2D" uid="uid://beheqyio3208x" path="res://Assets/Player/Horror game player animations.png" id="1_1q422"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_wuhkg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ildxv"]
+atlas = ExtResource("1_1q422")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1fok"]
+atlas = ExtResource("1_1q422")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5ton"]
+atlas = ExtResource("1_1q422")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7dlj"]
+atlas = ExtResource("1_1q422")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ib35"]
+atlas = ExtResource("1_1q422")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3snlg"]
+atlas = ExtResource("1_1q422")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol8fx"]
+atlas = ExtResource("1_1q422")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dklp"]
+atlas = ExtResource("1_1q422")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydw68"]
+atlas = ExtResource("1_1q422")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtvat"]
+atlas = ExtResource("1_1q422")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq0cr"]
+atlas = ExtResource("1_1q422")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvf3h"]
+atlas = ExtResource("1_1q422")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_esody"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ildxv")
+}],
+"loop": true,
+"name": &"frankie_default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1fok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5ton")
+}],
+"loop": true,
+"name": &"frankie_shooting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7dlj")
+}],
+"loop": true,
+"name": &"hunter_default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ib35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3snlg")
+}],
+"loop": true,
+"name": &"hunter_shooting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol8fx")
+}],
+"loop": true,
+"name": &"witch_default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dklp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydw68")
+}],
+"loop": true,
+"name": &"witch_shooting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtvat")
+}],
+"loop": true,
+"name": &"wolfie_default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq0cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvf3h")
+}],
+"loop": false,
+"name": &"wolfie_shooting",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_re06r"]
+size = Vector2(38.5, 87)
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_wuhkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_esody")
+animation = &"wolfie_shooting"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.75, 2.5)
+shape = SubResource("RectangleShape2D_re06r")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

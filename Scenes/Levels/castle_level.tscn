@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bys7o63qjpav1"]
+
+[ext_resource type="Texture2D" uid="uid://bloxp2shvndpx" path="res://Assets/Backgrounds/Skybox Castle outside.png" id="1_1smf0"]
+[ext_resource type="PackedScene" uid="uid://cxkg1io4r2lvq" path="res://Scenes/scrolling_bg.tscn" id="1_qsus7"]
+[ext_resource type="Texture2D" uid="uid://c6ro6uvqxf840" path="res://Assets/Backgrounds/Skull-moon.png" id="3_pi7w8"]
+[ext_resource type="Script" path="res://Scripts/moon.gd" id="4_jtc6x"]
+[ext_resource type="PackedScene" uid="uid://p0jk2b30vuf4" path="res://Scenes/Levels/player.tscn" id="5_duy8p"]
+
+[node name="CastleLevel" type="Node"]
+
+[node name="ScrollingBg" parent="." instance=ExtResource("1_qsus7")]
+bg_image = ExtResource("1_1smf0")
+
+[node name="Moon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.454902)
+z_index = 1
+position = Vector2(680, 224)
+texture = ExtResource("3_pi7w8")
+script = ExtResource("4_jtc6x")
+
+[node name="Player" parent="." instance=ExtResource("5_duy8p")]
+position = Vector2(102, 250)
